@@ -33,7 +33,7 @@ speechSynthesis.speak(utterance);
 
 const fetchAIResponse = async (userText) => {
 try {
-    const res = await fetch('${BASE_URL}/neuronixlife/', {
+    const res = await fetch(`${BASE_URL}/neuronixlife/`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ message: userText }),
