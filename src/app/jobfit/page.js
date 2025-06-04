@@ -49,7 +49,7 @@ const botPlaceholder = { type: "bot", text: "...", time: getCurrentTime() };
 setMessages((prev) => [...prev, botPlaceholder]);
 
 try {
-    const response = await fetch('${BASE_URL}/job_fit/', {
+    const response = await fetch(`${BASE_URL}/job_fit/`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ message: input.trim() }),
