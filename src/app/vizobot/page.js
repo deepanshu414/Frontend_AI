@@ -1,6 +1,7 @@
 "use client";
 import ReactMarkdown from "react-markdown";
 import { useState, useRef, useEffect } from "react";
+import BASE_URL from "@/app/basic_api"; 
 
 export default function FraudCurbChat() {
 const [messages, setMessages] = useState([
@@ -36,7 +37,7 @@ const sendMessage = async () => {
     setMessages((prev) => [...prev, { type: "typing", text: "" }]);
 
     try {
-    const res = await fetch("http://localhost:8000/api/vizobot/", {
+    const res = await fetch('${BASE_URL}/vizobot/', {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: input }),
