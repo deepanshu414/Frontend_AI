@@ -1,6 +1,7 @@
 "use client";
 import ReactMarkdown from "react-markdown";
 import { useState, useEffect, useRef } from "react";
+import BASE_URL from "@/app/basic_api"; 
 
 export default function VedaBotChat() {
 // Function to get the current time
@@ -41,7 +42,7 @@ setInput("");
 setIsTyping(true);
 
 try {
-    const response = await fetch("http://127.0.0.1:8000/veda_bot/", {
+    const response = await fetch('${BASE_URL}/veda_bot/', {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ message: input.trim() }),
