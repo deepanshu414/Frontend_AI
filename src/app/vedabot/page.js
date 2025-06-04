@@ -42,7 +42,7 @@ setInput("");
 setIsTyping(true);
 
 try {
-    const response = await fetch('${BASE_URL}/veda_bot/', {
+    const response = await fetch(`${BASE_URL}/veda_bot/`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ message: input.trim() }),
