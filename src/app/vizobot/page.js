@@ -37,7 +37,7 @@ const sendMessage = async () => {
     setMessages((prev) => [...prev, { type: "typing", text: "" }]);
 
     try {
-    const res = await fetch('${BASE_URL}/vizobot/', {
+    const res = await fetch(`${BASE_URL}/vizobot/`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: input }),
