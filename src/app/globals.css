@@ -1,0 +1,128 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* div[data-next-badge="true"] {
+  display: none !important;
+} */
+  
+button.rounded.bg-black\/40.p-4.transition-colors.duration-200.hover\:bg-black\/80{
+  display:none;
+}
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+
+*::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* Optionally prevent body overflow */
+
+html {
+  scroll-behavior: smooth;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family:serif, Arial, Helvetica, sans-serif;
+}
+
+@keyframes boxMove {
+  0% {
+    transform: translate(-40px, -40px);
+  }
+  25% {
+    transform: translate(40px, -40px);
+  }
+  50% {
+    transform: translate(40px, 40px);
+  }
+  75% {
+    transform: translate(-40px, 40px);
+  }
+  100% {
+    transform: translate(-40px, -40px);
+  }
+}
+
+@layer components {
+  .box {
+    @apply absolute w-[40px] h-[40px] animate-[boxMove_4s_linear_infinite];
+  }
+
+  .box1 {
+    background-color: rgb(158, 136, 246);
+    box-shadow: rgb(158, 136, 246) 0px 7px 29px 0px;
+    animation-delay: -1s;
+  }
+
+  .box2 {
+    background-color: rgb(97, 183, 253);
+    box-shadow: rgb(97, 183, 253) 0px 7px 29px 0px;
+    animation-delay: -2s;
+  }
+
+  .box3 {
+    background-color: rgb(95, 249, 175);
+    box-shadow: rgb(95, 249, 175) 0px 7px 29px 0px;
+    animation-delay: -3s;
+  }
+
+  .box4 {
+    background-color: rgb(243, 171, 89);
+    box-shadow: rgb(243, 171, 89) 0px 7px 29px 0px;
+    animation-delay: -4s;
+  }
+}
+.custom-outline-wrapper {
+  position: relative;
+  padding: 2px;
+  border-radius: 16px;
+}
+
+.custom-outline-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  border-radius: 16px;
+  -webkit-mask-composite: destination-in;
+  background: linear-gradient(135deg, #0F172A 20%, #e81cff, #40c9ff);
+  z-index: 0;
+  pointer-events: none;
+}
+
+
+.text-gif {
+  background-image: url('https://media.giphy.com/media/l3q2F9IiX4G1oEOn6/giphy.gif?cid=ecf05e47eveg7oprau6jzj5w0oaiv6oq2mmdjulk76tvdjzv&ep=v1_gifs_search&rid=giphy.gif&ct=g');
+  background-size: cover;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
